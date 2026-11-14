@@ -1,0 +1,113 @@
+<!doctype html>
+<title>두근두근 도키도키 인외 오피스</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Dodum&family=Jua&family=Orbitron:wght@700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+
+<div id="game">
+  <div id="screen" class="screen">
+
+    <!-- ===== STAGE ===== -->
+    <div id="stage">
+      <div id="bg" class="layer"></div>
+      <div id="bgNext" class="layer"></div>
+      <div id="tint" class="layer"></div>
+      <div id="chars" class="layer"></div>
+      <div id="glow" class="layer"></div>
+      <div id="particles" class="layer"></div>
+      <div id="cg" class="layer" hidden></div>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud" hidden>
+      <div class="loc-pill"><span id="hLoc">회사</span></div>
+    </div>
+    <div id="status" hidden aria-label="호감도"></div>
+    <div id="affPop"></div>
+
+    <!-- PHONE -->
+    <div id="phone" hidden>
+      <div class="phone-body">
+        <div class="phone-top"><span class="phone-cam"></span></div>
+        <div class="phone-head"><span id="phoneWho">복사기</span><small>카톡</small></div>
+        <div id="phoneMsgs"></div>
+      </div>
+    </div>
+
+    <!-- DIALOG -->
+    <div id="box" hidden>
+      <div id="nameplate" hidden><span id="nameText"></span></div>
+      <div id="text"></div>
+      <div id="star">★</div>
+      <div id="ctrl">
+        <button data-act="x2" id="btnX2" aria-label="2배속 자동 진행">x2</button>
+        <button data-act="x4" id="btnX4" aria-label="4배속 자동 진행">x4</button>
+        <button data-act="menu">MENU</button>
+      </div>
+    </div>
+
+    <!-- CHOICES -->
+    <div id="choices" hidden>
+      <div id="majorTag" hidden>♥ 운명의 선택 ♥</div>
+      <div id="choiceList"></div>
+    </div>
+
+
+    <!-- CHAPTER CARD -->
+    <div id="chapter" hidden>
+      <div class="chap-inner"><p id="chapNo"></p><h2 id="chapTitle"></h2></div>
+    </div>
+
+    <!-- TRANSITION ("다음 날") -->
+    <div id="transit" hidden><p id="transitText"></p></div>
+
+    <!-- ENDING CARD -->
+    <div id="ending" hidden>
+      <div class="end-inner">
+        <div id="loveMeter" hidden><span id="loveName"></span><div class="meter"><i id="loveFill"></i></div><b id="loveNum">♡ 70</b></div>
+        <p id="endKind"></p>
+        <h2 id="endTitle"></h2>
+        <p class="end-hint">화면을 눌러 계속</p>
+      </div>
+    </div>
+
+    <!-- TITLE -->
+    <div id="title">
+      <div class="rays"></div>
+      <div class="bokeh"></div>
+      <div id="titleChars"></div>
+      <div class="logo">
+        <div class="logo-spark s1">✦</div><div class="logo-spark s2">♥</div><div class="logo-spark s3">✧</div>
+        <div class="logo-spark s4">♥</div><div class="logo-spark s5">✦</div><div class="logo-spark s6">♡</div>
+        <h1 class="logo-main"><span class="l1" data-t="두근두근"><i>두근두근</i></span><span class="l2" data-t="도키도키♥"><i>도키도키</i><em>♥</em></span></h1>
+        <div class="ribbon"><span>인외 오피스♡</span></div>
+      </div>
+      <p class="tagline">♡ 오늘도 정상 출근했습니다. 연애만 빼고요. ♡</p>
+      <nav class="menu">
+        <button data-act="start">START</button>
+        <button data-act="continue" id="btnContinue">CONTINUE</button>
+        <button data-act="endings">ENDING</button>
+        <button data-act="options">OPTION</button>
+      </nav>
+      <p class="title-foot">클릭 · 스페이스 · 엔터로 대사 넘기기</p>
+    </div>
+
+    <!-- MODALS -->
+    <div id="modal" hidden>
+      <div class="modal-card">
+        <div class="modal-head"><h3 id="modalTitle"></h3><button class="x" data-act="close" aria-label="닫기">✕</button></div>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <div class="frame"></div>
+  </div>
+</div>
+
+<script src="assets/manifest.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/story.js"></script>
+<script src="js/engine.js"></script>
